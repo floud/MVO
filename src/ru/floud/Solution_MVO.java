@@ -48,6 +48,7 @@ public class Solution_MVO
         for (Point p : plane.points) {
             System.out.println(p);
         }
+        plane.printMvo();
 
 
     }
