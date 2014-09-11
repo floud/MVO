@@ -29,8 +29,6 @@ public class Plane {
 
     public void printMvo()
     {
-
-
         ArrayList<Point> copy = new ArrayList<Point>(points);
 
         // Поиск самой левой точки (первая вершина МВО).
@@ -42,9 +40,10 @@ public class Plane {
             {
                 min = point.getX();
                 left = point;
-                list.add(points.indexOf(left));
             }
+
         }
+        list.add(points.indexOf(left));
         //Найденную точку и последнюю меняем местами для выхода из цикла при попадании на этот элемент (цикл сделает круг по точкам)
         copy.set(copy.indexOf(left), copy.get(copy.size() - 1));
         copy.set(copy.size() - 1, left);
