@@ -11,12 +11,12 @@ import java.util.ArrayList;
  */
 public class Solution_MVO
 {
-    private static final String WELCOME_STRING = "Ввод точек на плоскость. Укажите координаты, для окончания ввода наберите \"exit\"";
-    private static final String ERROR_STRING = "Указано неверное значение, введите число или \"exit\" для окончания ввода";
+    private static final String WELCOME_STRING = "Ввод точек на плоскость. Укажите координаты, для окончания ввода наберите \"exit\".";
+    private static final String ERROR_STRING = "Указано неверное значение, введите число или \"exit\" для окончания ввода.";
     private static final String ENTER_X = "Введите х:";
     private static final String ENTER_Y = "Введите y:";
     private static final String EXIT = "exit";
-    private static final String WARNING = "Построение МВО невозможно: точек меньше 3-х или они на одной прямой";
+    private static final String WARNING = "Построение МВО невозможно: точек меньше 3-х или они на одной прямой.";
     private static ArrayList<Point> points = new ArrayList<Point>(); //массив точек на плоскости
     private static ArrayList<Integer> list = new ArrayList<Integer>(); //массив с индексами точек-вершин в МВО
 
@@ -150,7 +150,7 @@ public class Solution_MVO
     public static boolean checkPossibilityMvo() {
         if (points.size() < 3) return false;
         int count = 0;
-        for (int i = 1; i < points.size(); i++) {
+        for (int i = 2; i < points.size(); i++) {
             if (rotate(points.get(0), points.get(1), points.get(i)) != 0) count++;
         }
         return count != 0;
